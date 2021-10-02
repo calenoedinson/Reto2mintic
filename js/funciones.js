@@ -56,12 +56,10 @@ function editarCliente() {
         type: 'PUT',
         dataType: 'json',
         success: function (json, textStatus, xhr) {
-
             console.log(json);
         },
         error: function (xhr, status) {
             alert('ha sucedido un problema' + xhr.status);
-
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
@@ -74,7 +72,7 @@ function eliminarCliente() {
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
-            id: $('#ide').val(),
+            id: $('#ide').val()
         },
         dataType: 'json',
         type: 'DELETE',
