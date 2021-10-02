@@ -74,7 +74,7 @@ function eliminarCliente() {
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
-            id: $("#ide").val(),
+            id: $('#ide').val(),
         },
         dataType: 'json',
         type: 'DELETE',
