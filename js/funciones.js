@@ -13,13 +13,14 @@ function consultarClienteTodo() {
         success: function (json) {
             $("#TablaResultado").empty();
             $("#TablaResultado").append("<tr>");
+            $("#TablaResultado").append("<th>ID</th>");
             $("#TablaResultado").append("<th>Nombre</th>");
             $("#TablaResultado").append("<th>Email</th>");
             $("#TablaResultado").append("<th>Edad</th>>");
             $("#TablaResultado").append("</tr>");
             for (i = 0; i < json.items.length; i++) {
-                //$("#resultado").append(json.items[i].name + "<br>");
                 $("#TablaResultado").append("<tr>");
+                $("#TablaResultado").append("<td>" + json.items[i].id + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].name + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].email + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].edad + "</td>");
@@ -118,13 +119,14 @@ function buscarClienteId(id) {
         success: function (json) {
             $("#TablaResultado").empty();
             $("#TablaResultado").append("<tr>");
+            $("#TablaResultado").append("<th>ID</th>");
             $("#TablaResultado").append("<th>Nombre</th>");
             $("#TablaResultado").append("<th>Email</th>");
             $("#TablaResultado").append("<th>Edad</th>>");
             $("#TablaResultado").append("</tr>");
             for (i = 0; i < json.items.length; i++) {
-                //$("#resultado").append(json.items[i].name + "<br>");
                 $("#TablaResultado").append("<tr>");
+                $("#TablaResultado").append("<td>" + json.items[i].id + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].name + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].email + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].edad + "</td>");
