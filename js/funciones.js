@@ -49,7 +49,7 @@ function editarCliente() {
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
             id: $("#id").val(),
-            name: $("#name").val(),
+            name: $("#nombre").val(),
             email: $("#email").val(),
             age: $("#age").val()
         },
