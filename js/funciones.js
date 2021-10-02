@@ -14,11 +14,11 @@ function consultarClienteTodo() {
             $("#resultado").empty();
             for (i = 0; i < json.items.length; i++) {
                 //$("#resultado").append(json.items[i].name + "<br>");
-                $("#TablaResultado").append( "<tr>");
-                $("#TablaResultado").append("<td>"+json.items[i].name + "</td>");
-                $("#TablaResultado").append("<td>"+json.items[i].email + "</td>");
-                $("#TablaResultado").append("<td>"+json.items[i].edad+ "</td>");
-                $("#TablaResultado").append( "</tr>");
+                $("#TablaResultado").append("<tr>");
+                $("#TablaResultado").append("<td>" + json.items[i].name + "</td>");
+                $("#TablaResultado").append("<td>" + json.items[i].email + "</td>");
+                $("#TablaResultado").append("<td>" + json.items[i].edad + "</td>");
+                $("#TablaResultado").append("</tr>");
             }
             console.log(json)
         }
@@ -77,16 +77,20 @@ function editarCliente() {
     });
 }
 
-function eliminarCliente() {
+function eliminarCliente(idborra) {
+    var datos = {
+        id: idborra
+    }
+
+    var datosaEnviar = JSON.stringify(datos);
+
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
-        data: {
-            id: 3
-        },
-        type: 'DELETE',
+        data: datosaEnviar,
+        type: 'PUT',
         dataType: 'json',
-        success: function (json, textStatus, xhr) {
-            console.log(json);
+        success: function (response) {
+            console.log(response);
         },
         error: function (xhr, status) {
             alert('ha sucedido un problema' + xhr.status);
