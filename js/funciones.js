@@ -25,9 +25,9 @@ function guardarCliente() {
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
             id: $("#id").val(),
-            name: $("#name").val(),
-            email: $("#email").val(),
-            age: $("#age").val()
+            name: $("#nombre").val(),
+            email: $("#correo").val(),
+            age: $("#edad").val()
         },
         type: 'POST',
         dataType: 'json',
@@ -50,8 +50,8 @@ function editarCliente() {
         data: {
             id: $("#id").val(),
             name: $("#nombre").val(),
-            email: $("#email").val(),
-            age: $("#age").val()
+            email: $("#correo").val(),
+            age: $("#edad").val()
         },
         type: 'PUT',
         dataType: 'json',
@@ -99,7 +99,7 @@ function buscarClienteId(id) {
         dataType: 'json',
         success: function (json) {
             $("#resultado").empty();
-            $("#resultado").append(json.items[0].nombre + " $" + json.items[0].valor);
+            $("#resultado").append(json.items[0].name + " $" + json.items[0].valor);
             console.log(json);
         },
         error: function (xhr, status) {
