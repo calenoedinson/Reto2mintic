@@ -89,7 +89,7 @@ function eliminarCliente() {
         data: {
             id: $('#ide').val()
         },
-        type: 'POST',
+        type: 'DELETE',
         dataType: 'json',
         contentType: "application,json",
         success: function (json, textStatus, xhr) {
