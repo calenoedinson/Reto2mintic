@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Clientes</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/funciones.js"></script>
+</head>
+
+<body>
+    <h2>Clientes </h2>
+    <fieldset style="width: 30%">
+        <legend>Datos del Cliente</legend>
+        <table>
+            <tr>
+                <th>ID:</th>
+                <td><input type="text" id="id" readonly ondblclick="soloLectura()"> </td>
+            </tr>
+
+            <tr>
+                <th>NOMBRE:</th>
+                <td><input type="text" id="name"> </td>
+            </tr>
+            <tr>
+                <th>EMAIL:</th>
+                <td><input type="text" id="email"> </td>
+            </tr>
+            <tr>
+                <th>EDAD:</th>
+                <td><input type="number" id="age"> </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="GUARDAR" onclick="guardarCliente()"> &nbsp;&nbsp;&nbsp;
+                    <input type="button" value="EDITAR" onclick="editarCliente()"> &nbsp;&nbsp;&nbsp;
+                    <input type="button" value="ELIMINAR" onclick="eliminarCliente()">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+
+</html>

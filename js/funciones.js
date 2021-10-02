@@ -35,12 +35,10 @@ function guardarCliente() {
         type: 'POST',
         dataType: 'json',
         success: function (json, textStatus, xhr) {
-
             console.log(json);
         },
         error: function (xhr, status) {
             alert('ha sucedido un problema' + xhr.status);
-
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
@@ -50,16 +48,14 @@ function guardarCliente() {
 }
 
 //fecha : $("#fecha").val(),
-function editar() {
+function editarCliente() {
     $.ajax({
-        url: 'https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos',
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
             id: $("#id").val(),
-            nombre: $("#nombre").val(),
-            valor: $("#valor").val(),
-            fecha: "18/08/2021",
-            descripcion: $("#desc").val(),
-            nombre_usuario: $("#user").val()
+            name: $("#name").val(),
+            email: $("#email").val(),
+            age: $("#age").val()          
         },
         type: 'PUT',
         dataType: 'json',
@@ -78,9 +74,9 @@ function editar() {
     });
 }
 
-function eliminar() {
+function eliminarCliente() {
     $.ajax({
-        url: 'https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos',
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
             id: $("#id").val(),
         },
@@ -123,11 +119,10 @@ function buscarClienteId(id) {
 
 
 function limpiarFormulario() {
-    $("#nombre").val("");
-    $("#valor").val("");
-    $("#fecha").val("");
-    $("#desc").val("");
-    $("#user").val("");
+    $("#id").val("");
+    $("#name").val("");
+    $("#email").val("");
+    $("#age").val("");
 }
 
 function soloLectura() {
