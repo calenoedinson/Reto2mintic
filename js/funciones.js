@@ -99,7 +99,7 @@ function buscarClienteId(id) {
         dataType: 'json',
         success: function (json) {
             $("#resultado").empty();
-            $("#resultado").append(json.items[0].name + " $" + json.items[0].valor);
+            $("#resultado").append(json.items[0].name + " Correo: " + json.items[0].email +" Edad:" + json.items[0].age);
             console.log(json);
         },
         error: function (xhr, status) {
