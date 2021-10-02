@@ -11,143 +11,158 @@ function consultarClienteTodo() {
             alert('Petición realizada, ' + xhr.status);
         },
         success: function (json) {
-            <table class="default">
-                <tr>
-                    <th>Hoy</th>
-                    <th>Mañana</th>
-                    <th>Martes</th>
+            <table border="1" cellpadding="3" id="printTable">
+                <tbody><tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Points</th>
                 </tr>
-                <tr>
-                    <td>Soleado</td>
-                    <td>Mayormente soleado</td>
-                    <td>Parcialmente nublado</td>
-                </tr>
-            </table>
-                $("#resultado").empty();
-                for (i = 0; i < json.items.length; i++) {
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                        <td>94</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>Adam</td>
+                        <td>Johnson</td>
+                        <td>67</td>
+                    </tr>
+                </tbody></table>
+            $("#resultado").empty();
+            for (i = 0; i < json.items.length; i++) {
 
-                    $("#resultado").append(json.items[i].name + "<br>");
+                $("#resultado").append(json.items[i].name + "<br>");
             }
-                console.log(json)
+            console.log(json)
         }
     });
 }
 
-                function guardarCliente() {
-                    $.ajax({
-                        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
-                        data: {
-                            id: $('#ide').val(),
-                            name: $("#nombre").val(),
-                            email: $("#correo").val(),
-                            age: $('#edad').val()
-                        },
-                        type: 'POST',
-                        dataType: 'json',
-                        success: function (json, textStatus, xhr) {
-                            console.log(json);
-                        },
-                        error: function (xhr, status) {
-                            alert('ha sucedido un problema' + xhr.status);
-                        },
-                        complete: function (xhr, status) {
-                            alert('Petición realizada ' + xhr.status);
-                            limpiarFormulario();
-                        }
-                    });
+function guardarCliente() {
+    $.ajax({
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
+        data: {
+            id: $('#ide').val(),
+            name: $("#nombre").val(),
+            email: $("#correo").val(),
+            age: $('#edad').val()
+        },
+        type: 'POST',
+        dataType: 'json',
+        success: function (json, textStatus, xhr) {
+            console.log(json);
+        },
+        error: function (xhr, status) {
+            alert('ha sucedido un problema' + xhr.status);
+        },
+        complete: function (xhr, status) {
+            alert('Petición realizada ' + xhr.status);
+            limpiarFormulario();
+        }
+    });
 }
 
-                function editarCliente() {
+function editarCliente() {
     var datos = {
-                    id: $("#ide").val(),
-                name: $("#nombre").val(),
-                email: $("#correo").val(),
-                age: $("#edad").val
+        id: $("#ide").val(),
+        name: $("#nombre").val(),
+        email: $("#correo").val(),
+        age: $("#edad").val
     }
 
-                var datosaEnviar=JSON.stringify(datos);
+    var datosaEnviar = JSON.stringify(datos);
 
-                $.ajax({
-                    url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
-                data: datosaEnviar,
-                type: 'PUT',
-                dataType: 'json',
-                success: function (response) {
-                    console.log(response);
+    $.ajax({
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
+        data: datosaEnviar,
+        type: 'PUT',
+        dataType: 'json',
+        success: function (response) {
+            console.log(response);
         },
-                error: function (xhr, status) {
-                    alert('ha sucedido un problema' + xhr.status);
+        error: function (xhr, status) {
+            alert('ha sucedido un problema' + xhr.status);
         },
-                complete: function (xhr, status) {
-                    alert('Petición realizada ' + xhr.status);
-                limpiarFormulario();
+        complete: function (xhr, status) {
+            alert('Petición realizada ' + xhr.status);
+            limpiarFormulario();
         }
     });
 }
 
-                function eliminarCliente() {
-                    $.ajax({
-                        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
-                        data: {
-                            id: 3
-                        },
-                        type: 'DELETE',
-                        dataType: 'json',
-                        success: function (json, textStatus, xhr) {
-                            console.log(json);
-                        },
-                        error: function (xhr, status) {
-                            alert('ha sucedido un problema' + xhr.status);
-                        },
-                        complete: function (xhr, status) {
-                            alert('Petición realizada ' + xhr.status);
-                            limpiarFormulario();
-                        }
-                    });
+function eliminarCliente() {
+    $.ajax({
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
+        data: {
+            id: 3
+        },
+        type: 'DELETE',
+        dataType: 'json',
+        success: function (json, textStatus, xhr) {
+            console.log(json);
+        },
+        error: function (xhr, status) {
+            alert('ha sucedido un problema' + xhr.status);
+        },
+        complete: function (xhr, status) {
+            alert('Petición realizada ' + xhr.status);
+            limpiarFormulario();
+        }
+    });
 }
 
-                function buscarClienteId(id) {
-                    $.ajax({
-                        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client/' + id.val(),
-                        dataType: 'json',
-                        type: 'GET',
-                        dataType: 'json',
-                        success: function (json) {
-                            $("#resultado").empty();
-                            $("#resultado").append("Nombre: " + json.items[0].name + " Correo: " + json.items[0].email + " Edad: " + json.items[0].age);
-                            console.log(json);
-                        },
-                        error: function (xhr, status) {
-                            alert('ha sucedido un problema' + xhr.status);
-                        },
-                        complete: function (xhr, status) {
-                            alert('Petición realizada ' + xhr.status);
-                        }
-                    });
-}
-
-
-                function limpiarFormulario() {
-                    $("#ide").val("");
-                $("#nombre").val("");
-                $("#correo").val("");
-                $("#edad").val("");
+function buscarClienteId(id) {
+    $.ajax({
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client/' + id.val(),
+        dataType: 'json',
+        type: 'GET',
+        dataType: 'json',
+        success: function (json) {
+            $("#resultado").empty();
+            $("#resultado").append("Nombre: " + json.items[0].name + " Correo: " + json.items[0].email + " Edad: " + json.items[0].age);
+            console.log(json);
+        },
+        error: function (xhr, status) {
+            alert('ha sucedido un problema' + xhr.status);
+        },
+        complete: function (xhr, status) {
+            alert('Petición realizada ' + xhr.status);
+        }
+    });
 }
 
 
-    /*
-      $.ajax({
-          url:"https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos/",
-          type:"GET",
-          datatype:"JSON",
-          success:function(respuesta){
-          // obtener los elementos del json
-          $('<h1/>').text(json.title).appendTo('body');
-          $('<div class="content"/>')
-              .html(json.html).appendTo('body');
-          // mostrarlos por consola del navegado
-              console.log(respuesta);
-          }
-      });
-      */
+function limpiarFormulario() {
+    $("#ide").val("");
+    $("#nombre").val("");
+    $("#correo").val("");
+    $("#edad").val("");
+}
+
+
+/*
+  $.ajax({
+      url:"https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos/",
+      type:"GET",
+      datatype:"JSON",
+      success:function(respuesta){
+      // obtener los elementos del json
+      $('<h1/>').text(json.title).appendTo('body');
+      $('<div class="content"/>')
+          .html(json.html).appendTo('body');
+      // mostrarlos por consola del navegado
+          console.log(respuesta);
+      }
+  });
+  */
 
