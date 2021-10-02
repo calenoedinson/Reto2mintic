@@ -84,16 +84,20 @@ function editarCliente() {
 }
 
 function eliminarCliente() {
+    var datos = {
+        id: $("#ide").val()
+    }
+
+    var datosaEnviar = JSON.stringify(datos);
+
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
-        data: {
-            id: $('#ide').val()
-        },
+        data: datosaEnviar,
         type: 'DELETE',
         dataType: 'json',
         contentType: 'application/json',
-        success: function (json, textStatus, xhr) {
-            console.log(json);
+        success: function (response) {
+            console.log(response);
         },
         error: function (xhr, status) {
             alert('ha sucedido un problema' + xhr.status);
