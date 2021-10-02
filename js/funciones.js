@@ -59,7 +59,7 @@ function editarCliente() {
             console.log(json);
         },
         error: function (xhr, status) {
-            alert('ha sucedido un problema' + xhr.status);
+            alert('ha sucedido un problema' + xhr.status + $("#ide").val());
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
@@ -81,7 +81,7 @@ function eliminarCliente() {
             console.log(json);
         },
         error: function (xhr, status) {
-            alert('ha sucedido un problema' + xhr.status);
+            alert('ha sucedido un problema' + xhr.status + $("#ide").val());
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
@@ -98,7 +98,7 @@ function buscarClienteId(id) {
         dataType: 'json',
         success: function (json) {
             $("#resultado").empty();
-            $("#resultado").append("Nombre: " +json.items[0].name + " Correo: " + json.items[0].email +" Edad: " + json.items[0].age);
+            $("#resultado").append("Nombre: " + json.items[0].name + " Correo: " + json.items[0].email + " Edad: " + json.items[0].age);
             console.log(json);
         },
         error: function (xhr, status) {
