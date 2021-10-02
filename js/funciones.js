@@ -1,6 +1,6 @@
-function consultar() {
+function consultarClienteTodo() {
     $.ajax({
-        url: 'https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos',
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         //  data : { id : 123 },
         type: 'GET',
         dataType: 'json',
@@ -14,7 +14,7 @@ function consultar() {
         success: function (json) {
             $("#resultado").empty();
             for (i = 0; i < json.items.length; i++) {
-                $("#resultado").append(json.items[i].nombre + "<br>");
+                $("#resultado").append(json.items[i].name + "<br>");
             }
             console.log(json)
         }
@@ -101,9 +101,9 @@ function eliminar() {
     });
 }
 
-function buscarPorID(id) {
+function buscarClienteId(id) {
     $.ajax({
-        url: 'https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos/' + id.val(),
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client' + id.val(),
         dataType: 'json',
         type: 'GET',
         dataType: 'json',

@@ -1,16 +1,16 @@
 <html>
 
 <head>
-    <title>Cliente Ajax</title>
+    <title>Clientes</title>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/funciones.js"></script>
 </head>
 
 <body>
-    <h2>Cliente Ajax de Peticion HTTP </h2>
+    <h2>Clientes </h2>
     <fieldset style="width: 30%">
-        <legend>Datos del Usuario</legend>
+        <legend>Datos del Cliente</legend>
         <table>
             <tr>
                 <th>ID:</th>
@@ -19,23 +19,15 @@
 
             <tr>
                 <th>NOMBRE:</th>
-                <td><input type="text" id="nombre"> </td>
+                <td><input type="text" id="name"> </td>
             </tr>
             <tr>
-                <th>VALOR: $</th>
+                <th>EMAIL:</th>
                 <td><input type="number" id="valor"> </td>
             </tr>
             <tr>
-                <th>FECHAS:</th>
+                <th>EDAD:</th>
                 <td><input type="date" id="fecha"> </td>
-            </tr>
-            <tr>
-                <th>DESCRIPCION:</th>
-                <td><input type="TEXT" id="desc"> </td>
-            </tr>
-            <tr>
-                <th>USUARIO:</th>
-                <td><input type="TEXT" id="user"> </td>
             </tr>
             <tr>
                 <td colspan="2">
@@ -44,7 +36,6 @@
                     <input type="button" value="ELIMINAR" onclick="eliminar()">
                 </td>
             </tr>
-
         </table>
     </fieldset>
 </body>
