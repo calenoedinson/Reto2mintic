@@ -117,6 +117,10 @@ function limpiarFormulario() {
     $("#edad").val("");
 }
 
+function soloLectura(){
+    $("#ide").prop("readonly",false);
+}
+
 /*
   $.ajax({
       url:"https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos/",
