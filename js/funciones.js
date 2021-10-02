@@ -52,7 +52,7 @@ function editarCliente() {
         age: $('#edad').val()
     }
 
-var datosaEnviar=Json.stringify(datos);
+var datosaEnviar=JSON.stringify(datos);
 
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
