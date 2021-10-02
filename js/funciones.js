@@ -40,7 +40,7 @@ function guardarCliente() {
         },
         type: 'POST',
         dataType: 'json',
-        contentType: "application,json",
+        contentType: 'application/json',
         success: function (json, textStatus, xhr) {
             console.log(json);
         },
@@ -69,7 +69,7 @@ function editarCliente() {
         data: datosaEnviar,
         type: 'PUT',
         dataType: 'json',
-        contentType: 'application, json',
+        contentType: 'application/json',
         success: function (response) {
             console.log(response);
         },
@@ -91,7 +91,7 @@ function eliminarCliente() {
         },
         type: 'DELETE',
         dataType: 'json',
-        contentType: "application, json",
+        contentType: 'application/json',
         success: function (json, textStatus, xhr) {
             console.log(json);
         },
