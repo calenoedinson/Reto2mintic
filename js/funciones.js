@@ -59,7 +59,7 @@ function editarCliente() {
         id: $("#ide").val(),
         name: $("#nombre").val(),
         email: $("#correo").val(),
-        age: $("#edad").val
+        age: $("#edad").val()
     }
 
     var datosaEnviar = JSON.stringify(datos);
@@ -69,7 +69,7 @@ function editarCliente() {
         data: datosaEnviar,
         type: 'PUT',
         dataType: 'json',
-        contentType: "application,json",
+        contentType: 'application, json',
         success: function (response) {
             console.log(response);
         },
@@ -91,7 +91,7 @@ function eliminarCliente() {
         },
         type: 'DELETE',
         dataType: 'json',
-        contentType: "application,json",
+        contentType: "application, json",
         success: function (json, textStatus, xhr) {
             console.log(json);
         },
@@ -110,7 +110,6 @@ function buscarClienteId(id) {
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client/' + id.val(),
         dataType: 'json',
         type: 'GET',
-        dataType: 'json',
         success: function (json) {
             $("#resultado").empty();
             $("#resultado").append("Nombre: " + json.items[0].name + " Correo: " + json.items[0].email + " Edad: " + json.items[0].age);
