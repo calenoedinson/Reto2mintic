@@ -1,7 +1,6 @@
 function consultarClienteTodo() {
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
-        //  data : { id : 123 },
         type: 'GET',
         dataType: 'json',
 
@@ -21,7 +20,6 @@ function consultarClienteTodo() {
     });
 }
 
-//fecha : $("#fecha").val(),
 function guardarCliente() {
 
     $.ajax({
@@ -47,7 +45,6 @@ function guardarCliente() {
     });
 }
 
-//fecha : $("#fecha").val(),
 function editarCliente() {
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
@@ -55,7 +52,7 @@ function editarCliente() {
             id: $("#id").val(),
             name: $("#name").val(),
             email: $("#email").val(),
-            age: $("#age").val()          
+            age: $("#age").val()
         },
         type: 'PUT',
         dataType: 'json',
@@ -123,10 +120,6 @@ function limpiarFormulario() {
     $("#name").val("");
     $("#email").val("");
     $("#age").val("");
-}
-
-function soloLectura() {
-    $("#id").prop("readonly", false);
 }
 
 /*
