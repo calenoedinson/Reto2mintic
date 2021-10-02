@@ -86,7 +86,7 @@ function eliminarCliente(idborra) {
 
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
-        data: datos,
+        data: datosaEnviar,
         type: 'PUT',
         dataType: 'json',
         success: function (response) {
