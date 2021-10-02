@@ -13,12 +13,13 @@ function consultarClienteTodo() {
         success: function (json) {
             $("#TablaResultado").empty();
             $("#TablaResultado").append("<tr>");
-            $("#TablaResultado").append("<tr>");
-            $("#TablaResultado").append("<tr>");
-            $("#TablaResultado").append("<tr>");
+            $("#TablaResultado").append("<th>Nombre</th>");
+            $("#TablaResultado").append("<th>Email</th>");
+            $("#TablaResultado").append("<th>Edad</th>>");
             $("#TablaResultado").append("</tr>");
             for (i = 0; i < json.items.length; i++) {
                 //$("#resultado").append(json.items[i].name + "<br>");
+                $("#TablaResultado").append("<tr>");
                 $("#TablaResultado").append("<td>" + json.items[i].name + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].email + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].edad + "</td>");
@@ -128,7 +129,6 @@ function buscarClienteId(id) {
     });
 }
 
-
 function limpiarFormulario() {
     $("#ide").val("");
     $("#nombre").val("");
@@ -136,20 +136,4 @@ function limpiarFormulario() {
     $("#edad").val("");
 }
 
-
-/*
-  $.ajax({
-      url:"https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos/",
-      type:"GET",
-      datatype:"JSON",
-      success:function(respuesta){
-      // obtener los elementos del json
-      $('<h1/>').text(json.title).appendTo('body');
-      $('<div class="content"/>')
-          .html(json.html).appendTo('body');
-      // mostrarlos por consola del navegado
-          console.log(respuesta);
-      }
-  });
-  */
 
