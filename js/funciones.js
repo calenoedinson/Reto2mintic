@@ -13,7 +13,7 @@ function consultarClienteTodo() {
         success: function (json) {
             $("#resultado").empty();
             for (i = 0; i < json.items.length; i++) {
-                $("#resultado").append(json.items[i].name + "<br>");
+                //$("#resultado").append(json.items[i].name + "<br>");
                 $("#TablaResultado").append( "<tr>");
                 $("#TablaResultado").append("<td>"+json.items[i].name + "</td>");
                 $("#TablaResultado").append("<td>"+json.items[i].email + "</td>");
