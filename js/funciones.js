@@ -117,9 +117,6 @@ function limpiarFormulario() {
     $("#edad").val("");
 }
 
-function soloLectura(){
-    $("#ide").prop("readonly",false);
-}
 
 /*
   $.ajax({
