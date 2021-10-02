@@ -22,16 +22,15 @@ function consultar() {
 }
 
 //fecha : $("#fecha").val(),
-function guardar() {
+function guardarCliente() {
 
     $.ajax({
-        url: 'https://g6c335b483ca254-gastosbd1.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/gastos/gastos',
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
-            nombre: $("#nombre").val(),
-            valor: $("#valor").val(),
-            fecha: "18/08/2021",
-            descripcion: $("#desc").val(),
-            nombre_usuario: $("#user").val()
+            id: $("#id").val(),
+            name: $("#name").val(),
+            email: $("#email").val(),
+            age: $("#age").val()
         },
         type: 'POST',
         dataType: 'json',
