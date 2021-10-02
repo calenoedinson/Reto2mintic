@@ -21,7 +21,6 @@ function consultarClienteTodo() {
 }
 
 function guardarCliente() {
-
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
@@ -80,12 +79,10 @@ function eliminarCliente() {
         dataType: 'json',
         type: 'DELETE',
         success: function (json, textStatus, xhr) {
-
             console.log(json);
         },
         error: function (xhr, status) {
             alert('ha sucedido un problema' + xhr.status);
-
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
@@ -96,7 +93,7 @@ function eliminarCliente() {
 
 function buscarClienteId(id) {
     $.ajax({
-        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client' + id.val(),
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client/' + id.val(),
         dataType: 'json',
         type: 'GET',
         dataType: 'json',
