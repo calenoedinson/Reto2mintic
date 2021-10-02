@@ -99,7 +99,7 @@ function buscarClienteId(id) {
         dataType: 'json',
         success: function (json) {
             $("#resultado").empty();
-            $("#resultado").append(json.items[0].name + " Correo: " + json.items[0].email +" Edad:" + json.items[0].age);
+            $("#resultado").append("Nombre: " +json.items[0].name + " Correo: " + json.items[0].email +" Edad: " + json.items[0].age);
             console.log(json);
         },
         error: function (xhr, status) {
@@ -114,9 +114,9 @@ function buscarClienteId(id) {
 
 function limpiarFormulario() {
     $("#id").val("");
-    $("#name").val("");
-    $("#email").val("");
-    $("#age").val("");
+    $("#nombre").val("");
+    $("#correo").val("");
+    $("#edad").val("");
 }
 
 /*
