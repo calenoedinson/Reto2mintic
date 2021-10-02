@@ -116,9 +116,20 @@ function buscarClienteId(id) {
         dataType: 'json',
         type: 'GET',
         success: function (json) {
-            $("#resultado").empty();
-            $("#resultado").append("Nombre: " + json.items[0].name + " Correo: " + json.items[0].email + " Edad: " + json.items[0].age);
-            console.log(json);
+            $("#TablaResultado").empty();
+            $("#TablaResultado").append("<tr>");
+            $("#TablaResultado").append("<th>Nombre</th>");
+            $("#TablaResultado").append("<th>Email</th>");
+            $("#TablaResultado").append("<th>Edad</th>>");
+            $("#TablaResultado").append("</tr>");
+            for (i = 0; i < json.items.length; i++) {
+                //$("#resultado").append(json.items[i].name + "<br>");
+                $("#TablaResultado").append("<tr>");
+                $("#TablaResultado").append("<td>" + json.items[i].name + "</td>");
+                $("#TablaResultado").append("<td>" + json.items[i].email + "</td>");
+                $("#TablaResultado").append("<td>" + json.items[i].edad + "</td>");
+                $("#TablaResultado").append("</tr>");
+            }
         },
         error: function (xhr, status) {
             alert('ha sucedido un problema' + xhr.status);
