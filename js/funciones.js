@@ -23,7 +23,7 @@ function consultarClienteTodo() {
                 $("#TablaResultado").append("<td>" + json.items[i].id + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].name + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].email + "</td>");
-                $("#TablaResultado").append("<td>" + json.items[i].edad + "</td>");
+                $("#TablaResultado").append("<td>" + json.items[i].age + "</td>");
                 $("#TablaResultado").append("</tr>");
             }
             console.log(json)
@@ -35,19 +35,19 @@ function guardarCliente() {
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
         data: {
-            id: $('#ide').val(),
+            id: $("#ide").val(),
             name: $("#nombre").val(),
             email: $("#correo").val(),
-            age: $('#edad').val()
+            age: $("#edad").val()
         },
         type: 'POST',
         dataType: 'json',
         contentType: 'application/json',
-        success: function (json, textStatus, xhr) {
-            console.log(json);
+        success: function (response) {
+            console.log(response);
         },
         error: function (xhr, status) {
-            alert('ha sucedido un problema' + xhr.status);
+            alert('ha sucedido un problema ' + xhr.status);
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
@@ -129,7 +129,7 @@ function buscarClienteId(id) {
                 $("#TablaResultado").append("<td>" + json.items[i].id + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].name + "</td>");
                 $("#TablaResultado").append("<td>" + json.items[i].email + "</td>");
-                $("#TablaResultado").append("<td>" + json.items[i].edad + "</td>");
+                $("#TablaResultado").append("<td>" + json.items[i].age + "</td>");
                 $("#TablaResultado").append("</tr>");
             }
         },

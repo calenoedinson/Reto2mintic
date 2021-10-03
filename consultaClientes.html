@@ -14,13 +14,14 @@
     <span style="color: green;"><b>ID</b></span>
     <input type="text" id="id">
     <br> </br>
+    <button onclick="consultarClienteTodo()">Consulta todo</button>
+    &nbsp;&nbsp;&nbsp;
+    <button onclick="buscarClienteId($('#id'))">Consulta por id</button>
+    <br> </br>
     <table border="1" cellpadding="2" id="TablaResultado">
         <tbody>
         </tbody>
     </table>
-    <button onclick="consultarClienteTodo()">MOSTRAR TODO</button>
-    &nbsp;&nbsp;&nbsp;
-    <button onclick="buscarClienteId($('#id'))">MOSTRAR UNO</button>
 </body>
 
 </html>
