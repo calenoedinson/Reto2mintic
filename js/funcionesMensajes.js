@@ -1,6 +1,6 @@
-function consultarClienteTodo() {
+function consultarMensajeTodo() {
     $.ajax({
-        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message',
         type: 'GET',
         dataType: 'json',
 
@@ -11,38 +11,32 @@ function consultarClienteTodo() {
             alert('Petición realizada, ' + xhr.status);
         },
         success: function (json) {
-            $("#TablaResultadoClientes").empty();
-            $("#TablaResultadoClientes").append("<tr>");
-            $("#TablaResultadoClientes").append("<th>ID</th>");
-            $("#TablaResultadoClientes").append("<th>Nombre</th>");
-            $("#TablaResultadoClientes").append("<th>Email</th>");
-            $("#TablaResultadoClientes").append("<th>Edad</th>>");
-            $("#TablaResultadoClientes").append("</tr>");
+            $("#TablaResultadoMensajes").empty();
+            $("#TablaResultadoMensajes").append("<tr>");
+            $("#TablaResultadoMensajes").append("<th>ID</th>");
+            $("#TablaResultadoMensajes").append("<th>MENSAJE</th>");
+            $("#TablaResultadoMensajes").append("</tr>");
             for (i = 0; i < json.items.length; i++) {
-                $("#TablaResultadoClientes").append("<tr>");
-                $("#TablaResultadoClientes").append("<td>" + json.items[i].id + "</td>");
-                $("#TablaResultadoClientes").append("<td>" + json.items[i].name + "</td>");
-                $("#TablaResultadoClientes").append("<td>" + json.items[i].email + "</td>");
-                $("#TablaResultadoClientes").append("<td>" + json.items[i].age + "</td>");
-                $("#TablaResultadoClientes").append("</tr>");
+                $("#TablaResultadoMensajes").append("<tr>");
+                $("#TablaResultadoMensajes").append("<td>" + json.items[i].id + "</td>");
+                $("#TablaResultadoMensajes").append("<td>" + json.items[i].messagetext + "</td>");
+                $("#TablaResultadoMensajes").append("</tr>");
             }
             console.log(json)
         }
     });
 }
 
-function guardarCliente() {
+function guardarMensaje() {
     var datos = {
         id: $('#ide').val(),
-        name: $("#nombre").val(),
-        email: $("#correo").val(),
-        age: $('#edad').val()
+        name: $("#mensaje").val()
     }
 
     var datosaEnviar = JSON.stringify(datos);
 
     $.ajax({
-        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message',
         data: datosaEnviar,
         type: 'POST',
         dataType: 'json',
@@ -57,18 +51,16 @@ function guardarCliente() {
     });
 }
 
-function editarCliente() {
+function editarMensaje() {
     var datos = {
         id: $('#ide').val(),
-        name: $("#nombre").val(),
-        email: $("#correo").val(),
-        age: $('#edad').val()
+        name: $("#mensaje").val()
     }
 
     var datosaEnviar = JSON.stringify(datos);
 
     $.ajax({
-        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message',
         data: datosaEnviar,
         type: 'PUT',
         dataType: 'json',
@@ -83,7 +75,7 @@ function editarCliente() {
     });
 }
 
-function eliminarCliente() {
+function eliminarMensaje() {
     var datos = {
         id: $("#ide").val()
     }
@@ -91,7 +83,7 @@ function eliminarCliente() {
     var datosaEnviar = JSON.stringify(datos);
 
     $.ajax({
-        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message',
         data: datosaEnviar,
         type: 'DELETE',
         dataType: 'json',
@@ -109,27 +101,24 @@ function eliminarCliente() {
     });
 }
 
-function buscarClienteId(id) {
+function buscarMensajeId(id) {
     $.ajax({
-        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client/' + id.val(),
+        url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message/' + id.val(),
         dataType: 'json',
         type: 'GET',
         success: function (json) {
-            $("#TablaResultadoClientes").empty();
-            $("#TablaResultadoClientes").append("<tr>");
-            $("#TablaResultadoClientes").append("<th>ID</th>");
-            $("#TablaResultadoClientes").append("<th>Nombre</th>");
-            $("#TablaResultadoClientes").append("<th>Email</th>");
-            $("#TablaResultadoClientes").append("<th>Edad</th>>");
-            $("#TablaResultadoClientes").append("</tr>");
+            $("#TablaResultadoMensajes").empty();
+            $("#TablaResultadoMensajes").append("<tr>");
+            $("#TablaResultadoMensajes").append("<th>ID</th>");
+            $("#TablaResultadoMensajes").append("<th>MENSAJE</th>");
+            $("#TablaResultadoMensajes").append("</tr>");
             for (i = 0; i < json.items.length; i++) {
-                $("#TablaResultadoClientes").append("<tr>");
-                $("#TablaResultadoClientes").append("<td>" + json.items[i].id + "</td>");
-                $("#TablaResultadoClientes").append("<td>" + json.items[i].name + "</td>");
-                $("#TablaResultadoClientes").append("<td>" + json.items[i].email + "</td>");
-                $("#TablaResultadoClientes").append("<td>" + json.items[i].age + "</td>");
-                $("#TablaResultadoClientes").append("</tr>");
+                $("#TablaResultadoMensajes").append("<tr>");
+                $("#TablaResultadoMensajes").append("<td>" + json.items[i].id + "</td>");
+                $("#TablaResultadoMensajes").append("<td>" + json.items[i].messagetext + "</td>");
+                $("#TablaResultadoMensajes").append("</tr>");
             }
+            console.log(json)
         },
         error: function (xhr, status) {
             alert('ha sucedido un problema' + xhr.status);
@@ -142,9 +131,7 @@ function buscarClienteId(id) {
 
 function limpiarFormulario() {
     $("#ide").val("");
-    $("#nombre").val("");
-    $("#correo").val("");
-    $("#edad").val("");
+    $("#mensaje").val("");
 }
 
 
