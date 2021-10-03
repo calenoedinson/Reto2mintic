@@ -51,7 +51,7 @@ function guardarCliente() {
             console.log(response);
         },
         error: function (xhr, status) {
-            alert('ha sucedido un problema ' + xhr.status);
+            alert('ha sucedido un problema' + xhr.status);
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
@@ -80,7 +80,7 @@ function editarCliente() {
             console.log(response);
         },
         error: function (xhr, status) {
-            alert('ha sucedido un problema ' + xhr.status);
+            alert('ha sucedido un problema' + xhr.status);
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
