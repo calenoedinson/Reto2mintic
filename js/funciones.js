@@ -32,14 +32,18 @@ function consultarClienteTodo() {
 }
 
 function guardarCliente() {
+    var datos = {
+        id: $('#ide').val(),
+        name: $("#nombre").val(),
+        email: $("#correo").val(),
+        age: $('#edad').val()
+    }
+
+    var datosaEnviar = JSON.stringify(datos);
+
     $.ajax({
         url: 'https://g54ed9b48eae3a2-edinsondb.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client',
-        data: {
-            id: $("#ide").val(),
-            name: $("#nombre").val(),
-            email: $("#correo").val(),
-            age: $("#edad").val()
-        },
+        data: datosaEnviar,
         type: 'POST',
         dataType: 'json',
         contentType: 'application/json',
@@ -58,10 +62,10 @@ function guardarCliente() {
 
 function editarCliente() {
     var datos = {
-        id: $("#ide").val(),
+        id: $('#ide').val(),
         name: $("#nombre").val(),
         email: $("#correo").val(),
-        age: $("#edad").val()
+        age: $('#edad').val()
     }
 
     var datosaEnviar = JSON.stringify(datos);
@@ -76,7 +80,7 @@ function editarCliente() {
             console.log(response);
         },
         error: function (xhr, status) {
-            alert('ha sucedido un problema' + xhr.status);
+            alert('ha sucedido un problema ' + xhr.status);
         },
         complete: function (xhr, status) {
             alert('Petición realizada ' + xhr.status);
