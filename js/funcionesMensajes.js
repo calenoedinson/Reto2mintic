@@ -30,7 +30,7 @@ function consultarMensajeTodo() {
 function guardarMensaje() {
     var datos = {
         id: $('#ide').val(),
-        name: $("#mensaje").val()
+        messagetext: $("#mensaje").val()
     }
 
     var datosaEnviar = JSON.stringify(datos);
@@ -54,7 +54,7 @@ function guardarMensaje() {
 function editarMensaje() {
     var datos = {
         id: $('#ide').val(),
-        name: $("#mensaje").val()
+        messagetext: $("#mensaje").val()
     }
 
     var datosaEnviar = JSON.stringify(datos);
@@ -133,5 +133,6 @@ function limpiarFormulario() {
     $("#ide").val("");
     $("#mensaje").val("");
 }
+
 
 
