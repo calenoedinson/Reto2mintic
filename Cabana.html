@@ -44,31 +44,31 @@
                 </tr>
             </table>
         </fieldset>
+        <h2> CONSULTA DE CABAÑA</h2>
+        <fieldset style="width: 30%">
+            <legend>Consulta</legend>
+            <table>
+                <tr>
+                <tr>
+                    <th style="color: blue;">ID:</th>
+                    <td><input type="number" id="id"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="button" value="CONSULTAR TODAS" onclick="consultarCabanaTodo()"> &nbsp;&nbsp;&nbsp;
+                        <input type="button" value="CONSULTAR ID" onclick="buscarCabanaId($('#id'))">
+                    </td>
+                </tr>
+                <tr>
+                    <table border="2" cellpadding="3" id="TablaResultadoCabanas">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </tr>
+                </tr>
+            </table>
+        </fieldset>
     </center>
-    <h2> CONSULTA DE CABAÑA</h2>
-    <fieldset style="width: 30%">
-        <legend>Consulta</legend>
-        <table>
-            <tr>
-            <tr>
-                <th style="color: blue;">ID:</th>
-                <td><input type="number" id="id"></td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <input type="button" value="CONSULTAR TODAS" onclick="consultarCabanaTodo()"> &nbsp;&nbsp;&nbsp;
-                    <input type="button" value="CONSULTAR ID" onclick="buscarCabanaId($('#id'))">
-                </td>
-            </tr>
-            <tr>
-                <table border="2" cellpadding="3" id="TablaResultadoCabanas">
-                    <tbody>
-                    </tbody>
-                </table>
-            </tr>
-            </tr>
-        </table>
-    </fieldset>
 </body>
 
 </html>
